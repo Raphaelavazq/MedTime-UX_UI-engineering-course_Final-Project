@@ -1,0 +1,38 @@
+.card {
+    padding: 30px; /* Increase padding for larger cards */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;  }
+  
+  .card img {
+    width: 80px; /* Increase icon size */
+    height: 100px; /* Increase icon size */
+    margin-bottom: 10px; /* Add more space below the icon */
+  }
+  
+  .card h2 {
+    font-size: 1.5rem; /* Increase title size */
+    color: aliceblue;
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    font-size: 1rem; /* Increase description size */
+    color: rgb(58, 58, 156);
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(254, 99, 2, 0.2);
+}
+  
+  .cards-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px; /* Increase space between cards */
+    z-index: 1;
+    width: 100%; 
+    padding: 5px; 
+  }

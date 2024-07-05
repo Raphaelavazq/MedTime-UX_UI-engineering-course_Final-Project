@@ -1,0 +1,34 @@
+/* Sidebar.css */
+.sidebar {
+    width: 70px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    position: fixed; /* Fixed position to stay on the left */
+    top: 50%;
+    transform: translateY(-50%);
+    left: 35px; /* Adjust this to control the distance from the left edge */
+    z-index: 10; /* Ensure it stays above other content */
+}
+
+.sidebar button {
+    background: none;
+    border: none;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.sidebar button img {
+    width: 45px;
+    height: 45px;
+    transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.sidebar button img:hover {
+    filter: brightness(0) invert(1) sepia(3) saturate(8) hue-rotate(190deg);
+    transform: scale(1.1);
+}
