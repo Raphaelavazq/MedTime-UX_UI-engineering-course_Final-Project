@@ -1,38 +1,116 @@
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px; /* Space between cards */
+  z-index: 1;
+  width: 100%; 
+  padding: 5px;
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
 .card {
-    padding: 30px; /* Increase padding for larger cards */
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    border-radius: 15px;
-    text-align: center;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;  }
+  padding: 30px; /* Increase padding for larger cards */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  display: flex; /* Make the card a flex container */
+  flex-direction: column; /* Arrange children in a column */
+  justify-content: space-between; /* Distribute space between children */
+  align-items: center; /* Center items horizontally */
+  height: 100%; /* Ensure card takes full height */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.card img {
+  width: 80px; /* Fixed icon size */
+  height: 100px; /* Fixed icon size */
+  object-fit: contain; /* Ensure the image fits within the dimensions */
+  margin-bottom: 10px; /* Add more space below the icon */
+}
+
+.card h2 {
+  font-size: 1.5rem; /* Increase title size */
+  color: aliceblue;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 1rem; /* Increase description size */
+  color: rgb(58, 58, 156);
+  flex-grow: 1; /* Allow paragraph to grow and fill space */
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(254, 99, 2, 0.2);
+}
+
+.card-button {
+  background-color: transparent; /* Transparent background */
+  border: 2px solid #fe6302; /* Orange outline */
+  color: #fe6302; /* Orange text */
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 10px 0 0; /* Space between button and other elements */
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.card-button:hover {
+  background-color: #fe6302; /* Orange background on hover */
+  color: white; /* White text on hover */
+}
+
+@media (max-width: 768px) {
+  .cards-container {
+      grid-template-columns: 1fr; /* Stack cards on smaller screens */
+      overflow-x: hidden; /* Prevent horizontal scroll on smaller screens */
+      white-space: normal; /* Allow line breaks for normal wrapping */
+  }
+  
+  .card {
+      padding: 10px; /* Adjust padding for better fit on smaller screens */
+      width: 80%; /* Make cards take less width */
+      margin: 10px auto; /* Center cards */
+      display: flex; /* Ensure flex container */
+      flex-direction: column; /* Arrange children in a column */
+      justify-content: space-between; /* Distribute space between children */
+      align-items: center; /* Center items horizontally */
+      word-wrap: break-word; /* Break words if necessary */
+      overflow-wrap: break-word; /* Break words if necessary */
+      box-sizing: border-box; /* Include padding and border in element's total width and height */
+  }
   
   .card img {
-    width: 80px; /* Increase icon size */
-    height: 100px; /* Increase icon size */
-    margin-bottom: 10px; /* Add more space below the icon */
+      width: 80px; /* Fixed icon size */
+      height: 70px; /* Fixed icon size */
+      object-fit: contain; /* Ensure the image fits within the dimensions */
+      margin-bottom: 10px;
   }
   
   .card h2 {
-    font-size: 1.5rem; /* Increase title size */
-    color: aliceblue;
-    margin-bottom: 10px;
+      font-size: 0.9rem; /* Decrease title size */
+      margin: 5px 0; /* Adjust margin for better spacing */
   }
   
   .card p {
-    font-size: 1rem; /* Increase description size */
-    color: rgb(58, 58, 156);
+      font-size: 0.6rem; /* Decrease description size */
+      margin: 8px 0; /* Adjust margin for better spacing */
+      text-overflow: ellipsis; /* Add ellipsis for overflow text */
+      overflow: hidden; /* Hide overflow text */
+      white-space: normal; /* Allow normal wrapping */
+      flex-grow: 1; /* Allow paragraph to grow and fill space */
   }
-  
-  .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 12px rgba(254, 99, 2, 0.2);
+
+  .card-button {
+      font-size: 0.8rem; /* Adjust button font size for smaller screens */
+      padding: 8px 16px; /* Adjust button padding for smaller screens */
+      margin: 10px 0 0; /* Space between button and other elements */
+  }
 }
-  
-  .cards-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px; /* Increase space between cards */
-    z-index: 1;
-    width: 100%; 
-    padding: 5px; 
-  }
