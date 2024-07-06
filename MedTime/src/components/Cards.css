@@ -68,11 +68,7 @@
 }
 
 @media (max-width: 768px) {
-  .cards-container {
-      grid-template-columns: 1fr; /* Stack cards on smaller screens */
-      overflow-x: hidden; /* Prevent horizontal scroll on smaller screens */
-      white-space: normal; /* Allow line breaks for normal wrapping */
-  }
+
   
   .card {
       padding: 10px; /* Adjust padding for better fit on smaller screens */
