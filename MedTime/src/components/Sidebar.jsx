@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState } from 'react'; // Import useState from React
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import iconHome from '../assets/images/icon-home.svg';
 import iconNotification from '../assets/images/icon-notification.svg';
 import iconProfile from '../assets/images/icon-profile.svg';
@@ -19,9 +20,9 @@ const Sidebar = () => {
         <img src={hamburgerIcon} alt="Menu" />
       </button>
       <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
-        <button className="sidebar-icon">
+        <Link to="/" className="sidebar-icon">
           <img src={iconHome} alt="Home" />
-        </button>
+        </Link>
         <button className="sidebar-icon">
           <img src={iconNotification} alt="Notifications" />
         </button>

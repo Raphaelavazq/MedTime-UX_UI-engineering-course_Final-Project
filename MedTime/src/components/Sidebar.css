@@ -16,20 +16,26 @@
   transition: transform 0.3s ease-in-out;
 }
 
-.sidebar button {
+.sidebar button,
+.sidebar a { /* Ensure both buttons and links have the same styles */
   background: none;
   border: none;
   margin: 10px 0;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.sidebar button img {
+.sidebar button img,
+.sidebar a img { /* Ensure both buttons and links have the same image styles */
   width: 45px;
   height: 45px;
   transition: filter 0.2s ease, transform 0.2s ease;
 }
 
-.sidebar button img:hover {
+.sidebar button img:hover,
+.sidebar a img:hover { /* Ensure both buttons and links have the same hover styles */
   filter: brightness(0) invert(1) sepia(3) saturate(8) hue-rotate(190deg);
   transform: scale(1.1);
 }
@@ -59,26 +65,25 @@
 /* Mobile Styles */
 @media (max-width: 768px) {
   .sidebar {
-      display: none; /* Hidden by default */
-      top: auto;
-      bottom: 20px; /* Adjusted to start from the bottom */
-      transform: translateY(0);
-      left: auto; 
-      right: 180px;
-      width: 40%; /* Adjust width for horizontal layout */
-      flex-direction: row; /* Change to horizontal layout */
-      padding: 5px 0;
-      gap: 1rem;
+    display: none; /* Hidden by default */
+    top: auto;
+    bottom: 20px; /* Adjusted to start from the bottom */
+    transform: translateY(0);
+    left: auto; 
+    right: 180px;
+    width: auto; /* Adjust width for horizontal layout */
+    flex-direction: row; /* Change to horizontal layout */
+    padding: 5px 0;
+    gap: 1rem; /* Add gap between items */
   }
 
   .sidebar.open {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .hamburger-icon {
-      display: flex; /* Only display on mobile */
-
+    display: flex; /* Only display on mobile */
   }
 }
