@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './pages/Home'; // Updated path for Home
+import Home from './pages/Home';
 import Hospital from './pages/Hospital';
+import Pharmacy from './pages/Pharmacy'; 
 
 const App = () => {
   return (
@@ -8,6 +9,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/hospital" element={<Hospital />} />
+        <Route path="/pharmacy" element={<Pharmacy />} /> 
       </Routes>
     </Router>
   );
