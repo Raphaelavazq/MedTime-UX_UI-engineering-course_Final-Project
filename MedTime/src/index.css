@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 @tailwind base;
@@ -6,13 +7,13 @@
 
 
 
-
-/* Ensure these styles are applied globally */
-
 :root {
     --overlay-margin: 20px;
+    
   }
+
   
+
   body {
     
     margin: 0;

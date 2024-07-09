@@ -10,7 +10,7 @@ const Home = () => {
       {/* Sidebar component */}
       <Sidebar />
       <div className="main-content">
-        {/* Header section with title */}
+        {/* Header section with title 
         <header className="header w-full">
           <div className="flex items-center">
             <h1 className="font-bold text-[#ec7137]">Quick</h1>
@@ -18,7 +18,7 @@ const Home = () => {
             <h1 className="font-bold text-[#ec7137]">Smart</h1>
           </div>
           <h4 className="text-[#3c5aa1]">Solutions</h4>
-        </header>
+        </header>*/}
         {/* Main section with cards and image */}
         <main className="main">
           <Cards />
