@@ -7,24 +7,38 @@
 
 
 
+/* Tailwind utilities; */
+
+/* Ensure these styles are applied globally */
 :root {
-    --overlay-margin: 20px;
-    
-  }
+  --overlay-margin: 20px;
+  --font-mobile: 0.75rem; /* ~12pt */
+  --font-tablet: 1rem; /* ~16pt */
+  --font-desktop: 1.25rem; /* ~20pt */
+}
 
-  
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #8e44ad, #3498db);
+  overflow: hidden; /* Prevent scrolling */
+  font-family: 'Poppins', sans-serif;
+  font-size: var(--font-desktop);
+}
 
+@media (max-width: 767px) {
   body {
-    
-    margin: 0;
-    padding: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(to right, #8e44ad, #3498db);
-    overflow: hidden; /* Prevent scrolling */
-    font-family: 'Poppins', sans-serif;
+    font-size: var(--font-mobile);
   }
-  
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  body {
+    font-size: var(--font-tablet);
+  }
+}

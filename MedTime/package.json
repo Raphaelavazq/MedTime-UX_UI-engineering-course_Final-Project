@@ -11,6 +11,9 @@
     "start-server": "node server.js"
   },
   "dependencies": {
+    "@iconify-icons/material-symbols": "^1.2.58",
+    "@iconify-icons/medical-icon": "^1.2.3",
+    "@iconify/react": "^5.0.1",
     "@vis.gl/react-google-maps": "^1.1.0",
     "axios": "^1.7.2",
     "cors": "^2.8.5",

@@ -3,6 +3,11 @@ import axios from 'axios';
 import Sidebar from '../components/Sidebar';
 import Search from '../components/Search';
 import fetchHospitals from '../fetchHospitals';
+import { Icon } from '@iconify/react';
+import waitingAreaIcon from '@iconify-icons/medical-icon/i-waiting-area';
+import distanceIcon from '@iconify-icons/material-symbols/distance';
+import carIcon from '@iconify-icons/material-symbols/directions-car';
+import trainIcon from '@iconify-icons/material-symbols/train-rounded';
 import './Hospital.css';
 
 const Hospital = () => {
@@ -77,6 +82,7 @@ const Hospital = () => {
     setError(null);
     try {
       const hospitalsData = await fetchHospitals(postcode);
+      console.log('Mapped hospitals data:', hospitalsData);
       setDisplayedHospitals(hospitalsData.slice(0, 4));
       if (hospitalsData.length > 0) {
         setCenter(hospitalsData[0].location);
@@ -127,7 +133,7 @@ const Hospital = () => {
                       ? {
                           ...hospital,
                           distance: route.distance.text,
-                          [travelMode]: route.duration.text, // Add duration for the specific travel mode
+                          [travelMode]: route.duration.text,
                         }
                       : hospital
                   )
@@ -193,31 +199,27 @@ const Hospital = () => {
               <div key={index} className="hospital-card">
                 <h2>{hospital.name}</h2>
                 <p>{hospital.address}</p>
-                <p>Phone: {hospital.phoneNumber || 'N/A'}</p>
-                <p>Website: {hospital.website ? <a href={hospital.website} target="_blank" rel="noopener noreferrer">{hospital.website}</a> : 'N/A'}</p>
                 <div className="info">
                   <div className="info-item">
-                    <span>Distance:</span>
-                    <span>{hospital.distance || 'N/A'}</span>
+                    <Icon icon={distanceIcon} className="info-icon" /> {/* Distance icon */}
+                    <span className="info-duration">{hospital.distance || 'N/A'}</span>
                   </div>
                   <div className="info-item">
                     <span className="link" onClick={() => calculateAndDisplayRoute(hospital.location, window.google.maps.TravelMode.DRIVING)}>
-                      By Car
+                      <Icon icon={carIcon} className="info-icon" /> {/* Car icon */}
                     </span>
-                    <span>{hospital.DRIVING || 'N/A'}</span>
+                    <span className="info-duration">{hospital.DRIVING || 'N/A'}</span>
                   </div>
                   <div className="info-item">
-                    <div>
-                      <span className="link" onClick={() => calculateAndDisplayRoute(hospital.location, window.google.maps.TravelMode.TRANSIT)}>
-                        By Bus/Train
-                      </span>
-                      <span>{hospital.TRANSIT || 'N/A'}</span>
-                    </div>
-                    <a href="https://int.bahn.de/en" target="_blank" rel="noopener noreferrer" className="bus-link">DB Navigator</a>
+                    <span className="link" onClick={() => calculateAndDisplayRoute(hospital.location, window.google.maps.TravelMode.TRANSIT)}>
+                      <Icon icon={trainIcon} className="info-icon" /> {/* Train icon */}
+                    </span>
+                    <span className="info-duration">{hospital.TRANSIT || 'N/A'}</span>
                   </div>
-                  <div className="info-item">
-                    <span>ER Waiting Time:</span>
-                    <span>{hospital.waitingTime} min</span>
+                  <a href="https://int.bahn.de/en" target="_blank" rel="noopener noreferrer" className="bus-link">DB Navigator</a>
+                  <div className="info-er-waiting-times">
+                    <Icon icon={waitingAreaIcon} className="info-icon" /> {/* ER waiting area icon */}
+                    <span className="info-duration">{hospital.waitingTime} min</span>
                   </div>
                 </div>
               </div>

@@ -48,9 +48,11 @@
 }
 
 .card-button {
+  background-color: transparent; 
+  color: #ffffff; 
   background-color: transparent; /* Transparent background */
-  border: 2px solid #fe6302; /* Orange outline */
-  color: #fe6302; /* Orange text */
+  border: 2px solid #fe6302;
+
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
