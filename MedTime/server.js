@@ -26,6 +26,46 @@ const getPlaceDetails = async (placeId, apiKey) => {
   }
 };
 
+// Hospitals endpoint
+app.get('/api/hospitals', async (req, res) => {
+  try {
+    const { postcode } = req.query;
+    const API_KEY = process.env.VITE_GOOGLE_MAPS_API_KEY;
+
+    if (!postcode) {
+      return res.status(400).json({ error: 'Postcode is required' });
+    }
+
+    const { data } = await axios.get('https://maps.googleapis.com/maps/api/place/textsearch/json', {
+      params: {
+        query: `hospitals in Germany ${postcode}`,
+        key: API_KEY,
+      },
+    });
+
+    if (!data.results || data.results.length === 0) {
+      return res.status(404).json({ error: 'No hospitals found for the provided postcode' });
+    }
+
+    const hospitalsWithDetails = await Promise.all(data.results.map(async (hospital) => {
+      const details = await getPlaceDetails(hospital.place_id, API_KEY);
+      return {
+        ...hospital,
+        waitingTime: Math.floor(Math.random() * (120 - 5 + 1)) + 5, // Random wait time
+        phoneNumber: details.formatted_phone_number || 'N/A',
+        website: details.website || 'N/A',
+        openingHours: details.opening_hours ? details.opening_hours.weekday_text : 'No opening hours available'
+      };
+    }));
+
+    res.json(hospitalsWithDetails);
+  } catch (error) {
+    console.error('Error fetching hospitals:', error.message);
+    res.status(500).json({ error: 'Failed to fetch hospitals. Please try again later.' });
+  }
+});
+
+// Pharmacies endpoint
 app.get('/api/pharmacies', async (req, res) => {
   try {
     const { postcode } = req.query;
@@ -52,7 +92,7 @@ app.get('/api/pharmacies', async (req, res) => {
         ...pharmacy,
         phoneNumber: details.formatted_phone_number || 'N/A',
         website: details.website || 'N/A',
-        openingHours: details.opening_hours || { weekday_text: [] },
+        openingHours: details.opening_hours ? details.opening_hours.weekday_text : 'No opening hours available'
       };
     }));
 

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import searchIcon from '../assets/images/icon-search.svg';
 import './Search.css';
 
-const Search = ({ postcode, setPostcode, handleKeyPress, handleSearch, placeholderText, headerText }) => (
+const Search = ({ postcode, setPostcode, handleKeyPress, handleSearch }) => (
   <div className="search-container">
     <div className="search-bar-container">
       <input
@@ -11,11 +11,10 @@ const Search = ({ postcode, setPostcode, handleKeyPress, handleSearch, placehold
         onChange={(e) => setPostcode(e.target.value)}
         onKeyPress={handleKeyPress}
         className="postcode-input"
-        placeholder={placeholderText}
+        placeholder="Insert your postcode here"
       />
       <img src={searchIcon} alt="Search" className="search-icon" onClick={handleSearch} />
     </div>
-    <h1>{headerText}</h1>
   </div>
 );
 
@@ -24,12 +23,6 @@ Search.propTypes = {
   setPostcode: PropTypes.func.isRequired,
   handleKeyPress: PropTypes.func.isRequired,
   handleSearch: PropTypes.func.isRequired,
-  placeholderText: PropTypes.string, // Add prop type for placeholder text
-  headerText: PropTypes.string.isRequired, // Add prop type for header text
-};
-
-Search.defaultProps = {
-  placeholderText: 'Enter postcode...', // Default placeholder text
 };
 
 export default Search;

@@ -23,7 +23,7 @@ const Hospital = () => {
   const initializeMap = useCallback(() => {
     const mapOptions = {
       center: center,
-      zoom: 8,
+      zoom: 10,
       mapTypeControlOptions: {
         style: window.google.maps.MapTypeControlStyle.DROPDOWN_MENU,
         position: window.google.maps.ControlPosition.TOP_RIGHT,

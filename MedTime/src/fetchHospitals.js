@@ -2,13 +2,11 @@ import axios from 'axios';
 
 const fetchHospitals = async (postcode) => {
   try {
-    const { data } = await axios.get(`http://localhost:3001/api/hospitals`, {
-      params: {
-        postcode,
-      },
+    const response = await axios.get('http://localhost:3001/api/hospitals', {
+      params: { postcode },
     });
 
-    return data.map((place) => ({
+    return response.data.map((place) => ({
       name: place.name,
       address: place.formatted_address,
       location: place.geometry.location,

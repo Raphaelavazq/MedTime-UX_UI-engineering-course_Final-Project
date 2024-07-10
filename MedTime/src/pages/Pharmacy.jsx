@@ -196,7 +196,7 @@ const Pharmacy = () => {
             handleKeyPress={handleKeyPress}
             handleSearch={handleSearch}
             placeholderText="Enter postcode to find pharmacies..."
-            headerText="LET'S FIND YOU A <span className='highlight'>Pharmacy</span>"
+            headerText="Let's find you a Pharmacy!"
           />
         </div>
         <div className="content">

@@ -227,8 +227,8 @@
   height: 36px;
 }
 .map {
-  width: 50%;
-  height: 800px;
+  width: 60%;
+  height: 900px;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0px 1.35px 2.71px #00000040;
@@ -239,12 +239,12 @@
 /* Tablet Screens */
 @media (max-width: 1023px) {
   .map {
-    height: 400px;
+    height: 700px;
   }
 
   .hospital-card {
     padding: 15px;
-    height: 160px;
+    height: 300px;
   }
 
   .hospital-card h2 {
