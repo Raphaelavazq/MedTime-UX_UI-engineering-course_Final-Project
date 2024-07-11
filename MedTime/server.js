@@ -103,6 +103,44 @@ app.get('/api/pharmacies', async (req, res) => {
   }
 });
 
+// Doctors endpoint
+app.get('/api/doctors', async (req, res) => {
+  try {
+    const { specialty, postcode } = req.query;
+    const API_KEY = process.env.VITE_GOOGLE_MAPS_API_KEY;
+
+    if (!specialty || !postcode) {
+      return res.status(400).json({ error: 'Specialty and postcode are required' });
+    }
+
+    const { data } = await axios.get('https://maps.googleapis.com/maps/api/place/textsearch/json', {
+      params: {
+        query: `${specialty} doctors in Germany ${postcode}`,
+        key: API_KEY,
+      },
+    });
+
+    if (!data.results || data.results.length === 0) {
+      return res.status(404).json({ error: 'No doctors found for the provided specialty and postcode' });
+    }
+
+    const doctorsWithDetails = await Promise.all(data.results.map(async (doctor) => {
+      const details = await getPlaceDetails(doctor.place_id, API_KEY);
+      return {
+        ...doctor,
+        phoneNumber: details.formatted_phone_number || 'N/A',
+        website: details.website || 'N/A',
+        openingHours: details.opening_hours ? details.opening_hours.weekday_text : 'No opening hours available'
+      };
+    }));
+
+    res.json(doctorsWithDetails);
+  } catch (error) {
+    console.error('Error fetching doctors:', error.message);
+    res.status(500).json({ error: 'Failed to fetch doctors. Please try again later.' });
+  }
+});
+
 app.get('/api/maps-api-key', (req, res) => {
   const apiKey = process.env.VITE_GOOGLE_MAPS_API_KEY;
 

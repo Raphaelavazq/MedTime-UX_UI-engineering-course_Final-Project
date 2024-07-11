@@ -6,7 +6,7 @@
 .home-container {
     width: calc(100vw - 2 * var(--overlay-margin));
     height: calc(100vh - 2 * var (--overlay-margin));
-    background: linear-gradient(to right, #8e44ad, #3498db);
+    background: #fbc107;
     display: flex;
     position: relative;
     padding: var(--overlay-margin);

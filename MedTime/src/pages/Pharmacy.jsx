@@ -1,18 +1,41 @@
-import  { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import Sidebar from '../components/Sidebar';
 import Search from '../components/Search';
-import fetchPharmacies from '../fetchPharmacies';
 import { Icon } from '@iconify/react';
 import distanceIcon from '@iconify-icons/material-symbols/distance';
 import carIcon from '@iconify-icons/material-symbols/directions-car';
 import trainIcon from '@iconify-icons/material-symbols/train-rounded';
 import Widget from '../components/Widget'; // Import the widget component
-import './Pharmacy.css';
+import './Doctor.css';
 
-const Pharmacy = () => {
+const fetchDoctors = async (specialty, postcode) => {
+  try {
+    const { data } = await axios.get('http://localhost:3001/api/doctors', {
+      params: {
+        specialty,
+        postcode,
+      },
+    });
+
+    return data.map((place) => ({
+      name: place.name,
+      address: place.formatted_address,
+      location: place.geometry.location,
+      phoneNumber: place.phoneNumber,
+      website: place.website,
+      openingHours: place.openingHours,
+    }));
+  } catch (error) {
+    console.error('Error fetching doctors:', error);
+    throw error;
+  }
+};
+
+const Doctors = () => {
   const [postcode, setPostcode] = useState('');
-  const [displayedPharmacies, setDisplayedPharmacies] = useState([]);
+  const [specialty, setSpecialty] = useState('');
+  const [displayedDoctors, setDisplayedDoctors] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [center, setCenter] = useState({ lat: 51.1657, lng: 10.4515 });
@@ -97,22 +120,22 @@ const Pharmacy = () => {
   };
 
   const handleSearch = async () => {
-    if (!postcode) return;
+    if (!postcode || !specialty) return;
     setLoading(true);
     setError(null);
     try {
-      const pharmaciesData = await fetchPharmacies(postcode);
-      console.log('Mapped pharmacies data:', pharmaciesData);
-      setDisplayedPharmacies(pharmaciesData.slice(0, 4));
-      if (pharmaciesData.length > 0) {
-        setCenter(pharmaciesData[0].location);
-        pharmaciesData.forEach((pharmacy) => {
-          calculateAndDisplayRoute(pharmacy.location, window.google.maps.TravelMode.DRIVING);
-          calculateAndDisplayRoute(pharmacy.location, window.google.maps.TravelMode.TRANSIT);
+      const doctorsData = await fetchDoctors(specialty, postcode);
+      console.log('Mapped doctors data:', doctorsData);
+      setDisplayedDoctors(doctorsData.slice(0, 4));
+      if (doctorsData.length > 0) {
+        setCenter(doctorsData[0].location);
+        doctorsData.forEach((doctor) => {
+          calculateAndDisplayRoute(doctor.location, window.google.maps.TravelMode.DRIVING);
+          calculateAndDisplayRoute(doctor.location, window.google.maps.TravelMode.TRANSIT);
         });
       }
     } catch (err) {
-      setError(err.message || 'Failed to fetch pharmacies. Please try again.');
+      setError(err.message || 'Failed to fetch doctors. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -140,15 +163,15 @@ const Pharmacy = () => {
         if (status === window.google.maps.DirectionsStatus.OK) {
           directionsRenderer.setDirections(response);
           const route = response.routes[0].legs[0];
-          setDisplayedPharmacies((prevPharmacies) =>
-            prevPharmacies.map((pharmacy) =>
-              pharmacy.location.lat === destination.lat && pharmacy.location.lng === destination.lng
+          setDisplayedDoctors((prevDoctors) =>
+            prevDoctors.map((doctor) =>
+              doctor.location.lat === destination.lat && doctor.location.lng === destination.lng
                 ? {
-                    ...pharmacy,
+                    ...doctor,
                     distance: route.distance.text,
                     [travelMode]: route.duration.text,
                   }
-                : pharmacy
+                : doctor
             )
           );
         } else {
@@ -175,66 +198,73 @@ const Pharmacy = () => {
   useEffect(() => {
     if (map) {
       map.setCenter(center);
-      displayedPharmacies.forEach((pharmacy) => {
+      displayedDoctors.forEach((doctor) => {
         new window.google.maps.Marker({
-          position: pharmacy.location,
+          position: doctor.location,
           map: map,
-          title: pharmacy.name,
+          title: doctor.name,
         });
       });
     }
-  }, [center, displayedPharmacies, map]);
+  }, [center, displayedDoctors, map]);
 
   return (
-    <div className="pharmacy-container">
+    <div className="doctor-container">
       <Sidebar />
       <div className="main-content">
         <div className="header">
-          <Search 
+          <Search
             postcode={postcode}
             setPostcode={setPostcode}
+            specialty={specialty}
+            setSpecialty={setSpecialty}
             handleKeyPress={handleKeyPress}
             handleSearch={handleSearch}
-            placeholderText="Enter postcode to find pharmacies..."
-            headerText="Let's find you a Pharmacy!"
+            placeholderText="Enter postcode and specialty to find doctors..."
+            headerText="Let's find you a Doctor!"
           />
         </div>
         <div className="content">
-          <div className="pharmacy-list">
+          <div className="doctor-list">
             {loading && <div className="loading"><img src="src/assets/images/loading.gif" alt="Loading..." /></div>}
             {error && <div className="error">{error}</div>}
-            {displayedPharmacies.map((pharmacy, index) => (
-              <div key={index} className="pharmacy-card">
-                <h2>{pharmacy.name}</h2>
-                <p>{pharmacy.address}</p>
+            {displayedDoctors.map((doctor, index) => (
+              <div key={index} className="doctor-card">
+                <h2>{doctor.name}</h2>
+                <p>{doctor.address}</p>
                 <div className="info">
                   <div className="info-item">
                     <Icon icon={distanceIcon} className="info-icon" /> {/* Distance icon */}
-                    <span className="info-duration">{pharmacy.distance || 'N/A'}</span>
+                    <span className="info-duration">{doctor.distance || 'N/A'}</span>
                   </div>
                   <div className="info-item">
-                    <span className="link" onClick={() => calculateAndDisplayRoute(pharmacy.location, window.google.maps.TravelMode.DRIVING)}>
+                    <span className="link" onClick={() => calculateAndDisplayRoute(doctor.location, window.google.maps.TravelMode.DRIVING)}>
                       <Icon icon={carIcon} className="info-icon" /> {/* Car icon */}
                     </span>
-                    <span className="info-duration">{pharmacy.DRIVING || 'N/A'}</span>
+                    <span className="info-duration">{doctor.DRIVING || 'N/A'}</span>
                   </div>
                   <div className="info-item">
-                    <span className="link" onClick={() => calculateAndDisplayRoute(pharmacy.location, window.google.maps.TravelMode.TRANSIT)}>
+                    <span className="link" onClick={() => calculateAndDisplayRoute(doctor.location, window.google.maps.TravelMode.TRANSIT)}>
                       <Icon icon={trainIcon} className="info-icon" /> {/* Train icon */}
                     </span>
-                    <span className="info-duration">{pharmacy.TRANSIT || 'N/A'}</span>
+                    <span className="info-duration">{doctor.TRANSIT || 'N/A'}</span>
                   </div>
                   <a href="https://int.bahn.de/en" target="_blank" rel="noopener noreferrer" className="bus-link">DB Navigator</a>
                 </div>
                 <div className="opening-hours">
                   <h3>Opening Hours:</h3>
-                  {pharmacy.openingHours && pharmacy.openingHours.length > 0 ? (
-                    pharmacy.openingHours.map((hours, i) => (
+                  {doctor.openingHours && doctor.openingHours.length > 0 ? (
+                    doctor.openingHours.map((hours, i) => (
                       <p key={i}>{hours}</p>
                     ))
                   ) : (
                     <p>No opening hours available</p>
                   )}
+                </div>
+                <div className="appointment">
+                  <a href={doctor.website} target="_blank" rel="noopener noreferrer" className="appointment-link">
+                    Book Appointment
+                  </a>
                 </div>
               </div>
             ))}
@@ -247,4 +277,4 @@ const Pharmacy = () => {
   );
 };
 
-export default Pharmacy;
+export default Doctors;
