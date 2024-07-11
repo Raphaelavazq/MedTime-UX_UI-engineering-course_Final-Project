@@ -1,11 +1,13 @@
 import { FaSearch, FaMapMarkerAlt } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import heroDoctor from '../assets/images/doctor.gif';
 
 const specialties = ['Dentists', 'Cardiologists', 'Dermatologists', 'Pediatricians'];
 
 const SearchDoctors = () => {
   const [specialtyIndex, setSpecialtyIndex] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -15,8 +17,12 @@ const SearchDoctors = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const handleSearch = () => {
+    navigate('/book-doctor');
+  };
+
   return (
-    <div className="relative bg-yellow-500 p-6 md:p-10 lg:p-30  flex flex-col justify-end">
+    <div className="relative bg-yellow-500 p-6 md:p-10 lg:p-30 flex flex-col justify-end">
       <div className="flex flex-col lg:flex-row items-start lg:items-start justify-end">
         <div className="lg:w-1/2">
           <h1 aria-label="Find local doctors who take your insurance" className="text-4xl md:text-6xl lg:text-6xl font-bold">
@@ -51,7 +57,12 @@ const SearchDoctors = () => {
             className="p-2 pl-10 border border-gray-300 rounded w-full focus:outline-none focus:border-transparent"
           />
         </div>
-        <button className="p-3 bg-orange-500 text-white rounded w-full md:w-auto ">Search</button>
+        <button 
+          onClick={handleSearch}
+          className="p-3 bg-orange-500 text-white rounded w-full md:w-auto"
+        >
+          Search
+        </button>
       </div>
     </div>
   );
