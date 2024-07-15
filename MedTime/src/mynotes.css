@@ -1,0 +1,190 @@
+.hospital-card {
+    border: 2px solid #f0f0f0;
+    border-radius: 12px;
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  .hospital-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .hospital-icon-container {
+    flex-shrink: 0;
+  }
+  
+  .hospital-icon {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .hospital-info {
+    flex-grow: 1;
+    margin-left: 15px;
+  }
+  
+  .hospital-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .hospital-address {
+    font-size: 1rem;
+    color: #777;
+    margin: 0;
+  }
+  
+  .hospital-rating,
+  .hospital-contact,
+  .hospital-distance,
+  .hospital-waiting-time {
+    display: flex;
+    align-items: center;
+    background-color: #f7f7f7;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  .hospital-contact {
+    margin-top: 10px;
+  }
+  
+  .phone-icon, .web-icon {
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 8px;
+    margin-right: 5px;
+  }
+  
+
+
+  .contact-text {
+    margin-left: 5px;
+    font-size: 1rem;
+  }
+  
+  .website-link {
+    color: #007bff;
+    text-decoration: underline;
+  }
+  
+  .hospital-rating {
+    margin-top: 10px;
+  }
+  
+  .rating-icon {
+    color: #fac007;
+  }
+  
+  .rating-text {
+    margin-left: 5px;
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  .hospital-distance {
+    margin-top: 10px;
+  }
+  
+  .distance-icon {
+    margin-right: 5px;
+  }
+  
+  .distance-text {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .hospital-waiting-time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fac007;
+    color: black;
+    padding: 10px;
+    border-radius: 8px;
+    width: 140px;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  
+  .waiting-icon {
+    font-size: 2rem;
+    margin-right: 10px;
+  }
+  
+  .waiting-text {
+    font-size: 1rem;
+    font-weight: bold;
+    color: black;
+  }
+  
+  .hospital-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .hospital-transport {
+    display: flex;
+    align-items: center;
+  }
+  
+  .car-icon, .train-icon {
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 8px;
+    margin-right: 5px;
+  }
+  
+  .transport-text {
+    margin-left: 5px;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .db-navigator-button {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .db-navigator-button:hover {
+    background-color: darkred;
+  }
+  
+  .link:hover {
+    cursor: pointer;
+    background-color: gray;
+    border-radius: 8px;
+  }
+
+  //::::::::::::::::::::::::::::::::::::
+
+
+
+  

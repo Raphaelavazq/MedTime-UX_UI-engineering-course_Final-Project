@@ -12,7 +12,9 @@ const fetchHospitals = async (postcode) => {
       location: place.geometry.location,
       rating: place.rating,
       userRatingsTotal: place.user_ratings_total,
-      waitingTime: place.waitingTime, // Include waiting time
+      waitingTime: place.waitingTime,
+      phoneNumber: place.phoneNumber,
+      website: place.website,
     }));
   } catch (error) {
     console.error('Error fetching hospitals:', error);

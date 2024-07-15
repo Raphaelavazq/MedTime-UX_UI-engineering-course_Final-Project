@@ -1,49 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* Font Face Declarations */
-@font-face {
-  font-display: swap;
-  font-family: "kievit-slab-book"; /* replacing kievit with sharp sans medium */
-  src: url("https://d1uhlocgth3qyq.cloudfront.net/fonts/SharpSans-Medium-v1.002.woff2") format("woff2"),
-       url("https://d1uhlocgth3qyq.cloudfront.net/fonts/SharpSans-Medium-v1.002.woff") format("woff");
+.fjalla-one-regular {
+  font-family: "Fjalla One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
-@font-face {
-  font-display: swap;
-  font-family: "sharp-sans-medium";
-  src: url("https://d1uhlocgth3qyq.cloudfront.net/fonts/SharpSans-Medium-v1.002.woff2") format("woff2"),
-       url("https://d1uhlocgth3qyq.cloudfront.net/fonts/SharpSans-Medium-v1.002.woff") format("woff");
-}
-@font-face {
-  font-display: swap;
-  font-family: "sharp-sans-semibold";
-  src: url("https://d1uhlocgth3qyq.cloudfront.net/fonts/SharpSans-Semibold-v1.002.woff2") format("woff2"),
-       url("https://d1uhlocgth3qyq.cloudfront.net/fonts/SharpSans-Semibold-v1.002.woff") format("woff");
-}
-@font-face {
-  font-display: swap;
-  font-family: "sharp-sans-bold";
-  src: url("https://d1uhlocgth3qyq.cloudfront.net/fonts/SharpSans-Bold-v1.002.woff2") format("woff2"),
-       url("https://d1uhlocgth3qyq.cloudfront.net/fonts/SharpSans-Bold-v1.002.woff") format("woff");
-}
-@font-face {
-  font-family: 'fallback-font';
-  ascent-override: 100.9%;
-  descent-override: 30.6%;
-  line-gap-override: 0;
-  advance-override: 0;
-  src: local('Verdana');
+
+.unica-one-regular {
+  font-family: "Unica One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 /* Global Styles */
 html, body {
-  margin: 0;
+  min-width: 320px;
+  max-width: 1440px;
+  margin: 0 auto;
   padding: 0;
   font-size: 100%;
-  font-family: "sharp-sans-medium", "fallback-font", Arial, sans-serif;
+  font-family: 'Unica One', 'Fjalla One', sans-serif;
   line-height: 1.5;
-  background-color: #F7F8F9;
+  background-color: #FFC107;
   color: #333333;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -54,9 +38,12 @@ html, body {
 }
 
 body {
-  background-color: #F7F8F9;
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 0;
+  background-color: #FFC107;
   color: #333333;
-  font-family: "sharp-sans-medium", "fallback-font", Arial, sans-serif;
+  font-family: 'Unica One', 'Fjalla One', sans-serif;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -90,62 +77,4 @@ main {
 
 .bg-yellow-500 {
   background-color: #FFC107;
-}
-
-/* Typography */
-.home-page-header {
-  font-family: "sharp-sans-semibold", "fallback-font", Arial, sans-serif;
-  font-size: 28px;
-  line-height: 36px;
-  letter-spacing: 0em;
-  text-transform: none;
-  position: relative;
-  z-index: 1;
-}
-
-@media screen and (min-width: 768px) {
-  .home-page-header {
-    font-size: 44px;
-    line-height: 60px;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .home-page-header {
-    font-size: 44px;
-    line-height: 60px;
-  }
-}
-
-.bJcWCp h1 {
-  font-family: "sharp-sans-semibold", "fallback-font", Arial, sans-serif;
-  font-size: 24px;
-  line-height: 32px;
-  letter-spacing: 0em;
-  text-transform: none;
-}
-
-@media screen and (min-width: 768px) {
-  .bJcWCp h1 {
-    font-size: 30px;
-    line-height: 44px;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .bJcWCp h1 {
-    font-size: 32px;
-    line-height: 44px;
-  }
-}
-
-.bJcWCp {
-  color: rgb(51, 51, 51);
-  font-size: 16px;
-  line-height: 26px;
-  letter-spacing: 0em;
-}
-
-.eIMjFf {
-  color: rgb(51, 51, 51);
 }

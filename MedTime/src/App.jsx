@@ -3,7 +3,9 @@ import Home from './pages/Home';
 import Hospital from './pages/Hospital';
 import Pharmacy from './pages/Pharmacy';
 import Doctors from './pages/Doctors';
-import BookDoctorPage from './pages/BookDoctorPage'; // Import the new page
+import BookDoctorPage from './pages/BookDoctorPage';
+import SearchHospitals from './components/SearchHospitals';
+import FindHospitalsPage from './pages/FindHospitalsPage'; // Import the new page
 
 const App = () => {
   return (
@@ -13,7 +15,9 @@ const App = () => {
         <Route path="/hospital" element={<Hospital />} />
         <Route path="/pharmacy" element={<Pharmacy />} />
         <Route path="/doctor" element={<Doctors />} />
-        <Route path="/book-doctor" element={<BookDoctorPage />} /> {/* Add the new route */}
+        <Route path="/book-doctor" element={<BookDoctorPage />} />
+        <Route path="/search-hospitals" element={<SearchHospitals />} />
+        <Route path="/find-hospitals" element={<FindHospitalsPage />} />
       </Routes>
     </Router>
   );
