@@ -22,10 +22,10 @@ const SearchDoctors = () => {
   };
 
   return (
-    <div className="relative bg-yellow-500 p-6 md:p-10 lg:p-30 flex flex-col justify-end">
+    <div className="relative bg-yellow-500 p-6  mt-40 md:p-10 lg:p-30 flex flex-col justify-end">
       <div className="flex flex-col lg:flex-row items-start lg:items-start justify-end">
         <div className="lg:w-1/2">
-          <h1 aria-label="Find local doctors who take your insurance" className="text-4xl md:text-6xl lg:text-6xl font-bold">
+          <h1 aria-label="Find local doctors" className="text-4xl md:text-6xl lg:text-6xl font-bold">
             Let&rsquo;s Find You  {' '}
             <span className="relative block h-12 md:h-14 lg:h-16 overflow-hidden">
               <span key={specialties[specialtyIndex]} className="absolute inset-0 animate-bwwwin">
@@ -59,7 +59,7 @@ const SearchDoctors = () => {
         </div>
         <button 
           onClick={handleSearch}
-          className="p-3 bg-orange-500 text-white rounded w-full md:w-auto"
+          className="px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-white hover:text-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-opacity-75"
         >
           Search
         </button>

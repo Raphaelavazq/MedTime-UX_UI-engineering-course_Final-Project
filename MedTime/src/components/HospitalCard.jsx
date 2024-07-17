@@ -50,11 +50,23 @@ const HospitalCard = ({ hospital, calculateAndDisplayRoute }) => {
       </div>
       <div className="hospital-footer">
         <div className="hospital-transport">
-          <span className="link" onClick={() => calculateAndDisplayRoute(hospital.location, window.google.maps.TravelMode.DRIVING)}>
+          <span
+            className="link"
+            onClick={() => calculateAndDisplayRoute(hospital.location, window.google.maps.TravelMode.DRIVING)}
+            role="button"
+            tabIndex={0}
+            onKeyPress={() => calculateAndDisplayRoute(hospital.location, window.google.maps.TravelMode.DRIVING)}
+          >
             <Icon icon={carIcon} className="car-icon" />
           </span>
           <span className="transport-text">{hospital.DRIVING || 'N/A'}</span>
-          <span className="link" onClick={() => calculateAndDisplayRoute(hospital.location, window.google.maps.TravelMode.TRANSIT)}>
+          <span
+            className="link"
+            onClick={() => calculateAndDisplayRoute(hospital.location, window.google.maps.TravelMode.TRANSIT)}
+            role="button"
+            tabIndex={0}
+            onKeyPress={() => calculateAndDisplayRoute(hospital.location, window.google.maps.TravelMode.TRANSIT)}
+          >
             <Icon icon={trainIcon} className="train-icon" />
           </span>
           <span className="transport-text">{hospital.TRANSIT || 'N/A'}</span>

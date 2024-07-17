@@ -16,7 +16,7 @@ const FindHospitalsPage = () => {
   useEffect(() => {
     const initializeMap = () => {
       const mapOptions = {
-        center: { lat: 51.1657, lng: 10.4515 },
+        top: { lat: 51.1657, lng: 10.4515 },
         zoom: 10,
         mapTypeControlOptions: {
           style: window.google.maps.MapTypeControlStyle.DROPDOWN_MENU,

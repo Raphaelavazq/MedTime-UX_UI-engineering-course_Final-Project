@@ -1,0 +1,58 @@
+.values-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    padding-top: 30rem;
+  }
+  
+  .values-section .section-header {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #3c5aa1;
+    text-align: center;
+    line-height: 1.2;
+    letter-spacing: 0.33rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .values-section h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    padding-top: 1rem;
+  }
+  
+  .value-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .value-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .value-card-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+  }
+  
+  .value-card div {
+    margin-top: 1.25rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    line-height: 2rem;
+  }

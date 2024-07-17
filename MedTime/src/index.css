@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -12,8 +12,8 @@
   font-style: normal;
 }
 
-.unica-one-regular {
-  font-family: "Unica One", sans-serif;
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -25,7 +25,7 @@ html, body {
   margin: 0 auto;
   padding: 0;
   font-size: 100%;
-  font-family: 'Unica One', 'Fjalla One', sans-serif;
+  font-family: 'Fjalla One', sans-serif;
   line-height: 1.5;
   background-color: #FFC107;
   color: #333333;
@@ -43,7 +43,6 @@ body {
   padding: 0;
   background-color: #FFC107;
   color: #333333;
-  font-family: 'Unica One', 'Fjalla One', sans-serif;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

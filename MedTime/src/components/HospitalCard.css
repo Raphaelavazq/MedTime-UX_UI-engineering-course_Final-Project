@@ -130,6 +130,7 @@
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   border-radius: 8px;
 }
+
 .car-icon:hover,
 .train-icon:hover {
   background-color: #fac007;

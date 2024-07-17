@@ -5,7 +5,7 @@ import iconHospital from '../assets/images/icon-hospital.svg';
 import iconPharmacy from '../assets/images/icon-pharmacy.svg';
 import iconDoctor from '../assets/images/icon-doctor.svg';
 import iconSymptomChecker from '../assets/images/icon-symptom-checker.svg';
-import './Cards.css'; // Import the Cards CSS
+import './Cards.css';
 
 const Card = ({ icon, title, description, link }) => {
   return (
@@ -33,11 +33,11 @@ const Cards = () => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.style.animation = 'fadeInUp 1s forwards';
-          observer.unobserve(entry.target); // Stop observing once the animation is applied
+          observer.unobserve(entry.target);
         }
       });
     }, {
-      threshold: 0.1 // Trigger when 10% of the card is in view
+      threshold: 0.1
     });
 
     cards.forEach(card => {

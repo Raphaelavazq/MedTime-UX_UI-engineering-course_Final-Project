@@ -25,7 +25,10 @@ const SearchHospitals = () => {
             onChange={(e) => setPostcode(e.target.value)}
           />
         </div>
-        <button onClick={handleSearch} className="p-3 bg-orange-500 text-white rounded w-full md:w-auto">
+        <button 
+          onClick={handleSearch} 
+          className="px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-white hover:text-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-opacity-75"
+        >
           Search
         </button>
       </div>

@@ -1,11 +1,12 @@
 import { ParallaxProvider, Parallax } from "react-scroll-parallax";
 import { useEffect } from "react";
 import layerBack from "../assets/images/layer_back.png";
-import layerMiddle from "../assets/images/layer_midle.png";
+import layerMiddle from "../assets/images/layer_middle.png";
 import layerFront from "../assets/images/layer_front.png";
 import rocket from "../assets/images/rocket.svg";
 import bubblesBackground from "../assets/images/layer_bubbles.png";
 import smallDeviceImage from "../assets/images/hero-rocket.png";
+import waves from "../assets/images/waves.png";
 import "./HeroHome.css";
 
 const HeroHome = () => {
@@ -44,20 +45,23 @@ const HeroHome = () => {
   return (
     <ParallaxProvider>
       <div className="hero-home-container">
+        <Parallax className="bubbles-background" y={[-20, 20]}>
+          <img src={bubblesBackground} alt="Bubbles Background" />
+        </Parallax>
+        <div className="waves-container">
+          <img src={waves} alt="Waves" className="waves-image" />
+        </div>
         <div className="main-content">
           <div className="header">
-            <p className="subtitle">MedTime</p>
+            <p className="subtitle">LAUNCH INTO THE FUTURE</p>
             <p className="description">
-              Experience the future of healthcare!
+            Make it Easy and Fast!
               <br />
               <br />
               <a href="#" className="cta-link">Let’s get started!</a>
             </p>
           </div>
-          <div className="parallax-container">
-            <Parallax className="bubbles-background" y={[-20, 20]}>
-              <img src={bubblesBackground} alt="Bubbles Background" />
-            </Parallax>
+          <div className="grid-container">
             <Parallax className="layer layer-back" y={[20, -20]}>
               <img src={layerBack} alt="Layer Back" />
             </Parallax>
@@ -70,8 +74,8 @@ const HeroHome = () => {
             <Parallax className="layer layer-rocket" y={[50, -50]}>
               <img src={rocket} alt="Rocket" />
             </Parallax>
-            <img src={smallDeviceImage} alt="Small Device Image" className="small-device-image" />
           </div>
+          <img src={smallDeviceImage} alt="Small Device Image" className="small-device-image" />
         </div>
       </div>
     </ParallaxProvider>
@@ -79,3 +83,8 @@ const HeroHome = () => {
 }
 
 export default HeroHome;
+
+
+
+
+

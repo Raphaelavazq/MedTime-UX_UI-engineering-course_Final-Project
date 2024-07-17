@@ -16,7 +16,7 @@ const HeroHospitals = () => {
   }, []);
 
   return (
-    <div className="bg-yellow-500  flex flex-col lg:flex-row justify-end items-center lg:items-start">
+    <div className="bg-yellow-500 mt-40 flex flex-col lg:flex-row justify-end items-center lg:items-start">
       <div className="lg:w-1/2  lg:mb-0 text-center lg:text-left">
         <h1 aria-label="Find the nearest hospitals without waiting more than you have" className="text-4xl md:text-6xl lg:text-6xl font-bold">
           Find {' '}
