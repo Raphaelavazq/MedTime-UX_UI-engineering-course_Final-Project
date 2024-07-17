@@ -1,0 +1,35 @@
+/* Keyframes for animation */
+@keyframes rotate {
+    0% { opacity: 0; transform: translateY(100%); }
+    10% { opacity: 1; transform: translateY(0); }
+    90% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-100%); }
+  }
+  
+  .animate-rotate {
+    animation: rotate 3s linear infinite;
+  }
+  
+  .no-space {
+    margin: 0;
+    padding: 0;
+    display: block;
+  }
+  
+  .hero-title {
+    
+    margin-bottom: 0;
+    font-weight: 900;
+  }
+  
+  .large-image {
+    width: 180%;
+    height: auto;
+  }
+  
+  @media (min-width: 1022px) and (max-width: 1442px) {
+    .large-image {
+      width: 250%; /* Increase the size of the image for the specified range */
+      height: 260%;
+    }
+  }

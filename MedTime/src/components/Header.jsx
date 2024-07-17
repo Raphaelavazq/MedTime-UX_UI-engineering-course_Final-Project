@@ -27,7 +27,7 @@ const Header = () => {
 
   const navigation = [
     { id: 1, title: 'Hospitals', url: '/hospital' },
-    { id: 2, title: 'Pharmacies', url: '/pharmacy' },
+    { id: 2, title: 'Pharmacies', url: '/pharmacy' }, // Corrected URL
     { id: 3, title: 'Book Appointments', url: '/doctor' },
     { id: 4, title: 'Symptom Checker', url: '/symptom-checker' },
   ];

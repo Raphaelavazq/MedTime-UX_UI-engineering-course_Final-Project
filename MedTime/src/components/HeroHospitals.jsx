@@ -17,15 +17,19 @@ const HeroHospitals = () => {
 
   return (
     <div className="bg-yellow-500 mt-40 flex flex-col lg:flex-row justify-end items-center lg:items-start">
-      <div className="lg:w-1/2  lg:mb-0 text-center lg:text-left">
-        <h1 aria-label="Find the nearest hospitals without waiting more than you have" className="text-4xl md:text-6xl lg:text-6xl font-bold">
+      <div className="lg:w-1/2 lg:mb-0 text-center lg:text-left">
+        <h1
+          aria-label="Find the nearest hospitals without waiting more than you have"
+          className="text-4xl md:text-6xl lg:text-6xl font-bold"
+          style={{ fontFamily: 'Fjalla One, sans-serif', color: 'white' }}
+        >
           Find {' '}
-          <span className="relative block h-12 md:h-14 lg:h-16 overflow-hidden">
-            <span key={hospitalTypes[typeIndex]} className="absolute inset-0 animate-bwwwin">
+          <span className="relative block h-16 md:h-20 lg:h-24 ">
+            <span key={hospitalTypes[typeIndex]} className="absolute inset-0 mt-4 text-7xl text-blue-600 animate-bwwwin">
               {hospitalTypes[typeIndex]}
             </span>
           </span>
-          <br />Just go when you have to
+          <br />Check Waiting Times <br />Just go when you have to
         </h1>
       </div>
       <div className="lg:w-1/2 flex justify-center lg:justify-end">
