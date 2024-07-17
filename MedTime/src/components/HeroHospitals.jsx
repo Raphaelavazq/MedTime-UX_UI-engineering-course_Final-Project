@@ -29,7 +29,7 @@ const HeroHospitals = () => {
               {hospitalTypes[typeIndex]}
             </span>
           </span>
-          <br />Check Waiting Times <br />Just go when you have to
+          <br />Check Waiting Times <br />Just go when you have to 
         </h1>
       </div>
       <div className="lg:w-1/2 flex justify-center lg:justify-end">
