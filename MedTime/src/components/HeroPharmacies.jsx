@@ -19,7 +19,7 @@ const HeroPharmacies = () => {
       <div className="lg:w-1/2 lg:mb-0 text-center lg:text-left">
         <h1
           aria-label="Find the nearest Pharmacies"
-          className="text-4xl md:text-6xl lg:text-6xl font-bold"
+          className="text-4xl lg:ml-8 md:text-6xl lg:text-6xl font-bold"
           style={{ fontFamily: 'Fjalla One, sans-serif', color: 'white' }}
         >
           Find {' '}
