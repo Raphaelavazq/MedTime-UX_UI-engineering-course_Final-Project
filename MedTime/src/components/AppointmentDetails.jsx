@@ -6,7 +6,7 @@ const AppointmentDetails = () => {
       <p>The office partners  to schedule appointments</p>
       <div className="flex items-center mt-4">
         <div className="bg-yellow-500 p-2 rounded-full">
-          <FaVideo className="text-orange-500" />
+          <FaVideo className="text-blue-500" />
         </div>
         <p className="ml-2">External video visit</p>
       </div>
@@ -45,8 +45,8 @@ const AppointmentDetails = () => {
           ))}
         </div>
       </div>
-      <button className="mt-4 text-orange-500 hover:underline">View more availability</button>
-      <button className="mt-4 w-full p-2 bg-orange-500 text-white rounded">Book an appointment</button>
+      <button className="mt-4 text-blue-500 hover:underline">View more availability</button>
+      <button className="mt-4 w-full p-2 bg-blue-500 text-white rounded">Book an appointment</button>
     </div>
   );
 };

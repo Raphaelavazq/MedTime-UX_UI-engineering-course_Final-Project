@@ -1,8 +1,8 @@
 /* Sidebar Styles */
 .sidebar {
   width: 70px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  background: white; /* Changed to white */
+  border: 2px solid var(--yellow-500); /* Added border */
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -43,8 +43,7 @@
 /* Hamburger Menu Icon */
 .hamburger-icon {
   display: none; /* Hidden by default */
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  background: var(--yellow-500); /* Changed to yellow-500 */
   border-radius: 20px;
   cursor: pointer;
   position: fixed;
@@ -86,4 +85,15 @@
   .hamburger-icon {
     display: flex; /* Only display on mobile */
   }
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 40;
 }

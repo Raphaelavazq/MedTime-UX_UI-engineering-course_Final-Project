@@ -1,29 +1,38 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./index.html",
-    "./src/**/*.{js,jsx,ts,tsx}",
+    './index.html',
+    './src/**/*.{js,jsx,ts,tsx}',
   ],
   theme: {
     extend: {
       fontFamily: {
-        sans: ['sharp-sans-medium', 'sharp-sans-semibold', 'sharp-sans-bold', 'Poppins', 'sans-serif'],
+        'fjalla-one': ['"Fjalla One"', 'sans-serif'],
+        'poppins': ['"Poppins"', 'sans-serif'],
       },
       animation: {
-        'bwwwin': 'bwwwin 0.5s ease-in-out 1 forwards',
+        'fadeIn': 'fadeIn 2s forwards',
+        'fadeOut': 'fadeOut 2s forwards',
+        'dance': 'dance 1.5s infinite',
+        'rocketDance': 'rocketDance 1s infinite',
       },
       keyframes: {
-        bwwwin: {
-          '0%': { opacity: 0, transform: 'translateY(20px)' },
-          '100%': { opacity: 1, transform: 'translateY(0)' },
+        fadeIn: {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 },
         },
-      },
-      colors: {
-        'yellow-100': '#FFF4E0',
-        'yellow-50': '#FFFAF0',
-        'yellow-500': '#FFC107',
-        'background': '#F7F8F9',
-        'text-primary': '#333333',
+        fadeOut: {
+          '0%': { opacity: 1 },
+          '100%': { opacity: 0 },
+        },
+        dance: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        rocketDance: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
       },
     },
   },

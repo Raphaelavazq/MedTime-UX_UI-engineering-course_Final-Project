@@ -1,0 +1,52 @@
+.header {
+  background-color: white;
+}
+
+a {
+  color: var(--yellow-500);
+  font-weight: bold;
+}
+
+a:hover {
+  color: var(--yellow-500);
+}
+
+.hamburger-menu {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+nav a {
+  color: white;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: var(--blue-500);
+}
+
+@media (min-width: 1024px) {
+  nav a {
+    font-size: 1.25rem; /* Increase font size for desktop */
+  }
+}
+
+button:hover {
+  color: var(--yellow-500);
+}
+
+.logo-icon-bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--blue-500);
+  color: white;
+}
+
+.no-hover:hover {
+  color: white; /* Ensure no hover effect */
+}

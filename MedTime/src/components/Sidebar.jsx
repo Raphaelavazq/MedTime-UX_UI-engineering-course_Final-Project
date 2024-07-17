@@ -16,17 +16,17 @@ const Sidebar = () => {
 
   return (
     <>
-      <button className="hamburger-icon" onClick={toggleSidebar}>
+      <button className="hamburger-icon bg-yellow-500" onClick={toggleSidebar}>
         <img src={hamburgerIcon} alt="Menu" />
       </button>
       <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
         <Link to="/" className="sidebar-icon">
           <img src={iconHome} alt="Home" />
         </Link>
-        <button className="sidebar-icon">
+        <button className="sidebar-icon ">
           <img src={iconNotification} alt="Notifications" />
         </button>
-        <button className="sidebar-icon">
+        <button className="sidebar-icon ">
           <img src={iconProfile} alt="Profile" />
         </button>
         <button className="sidebar-icon">

@@ -1,0 +1,84 @@
+.timeline-guide-container {
+  background-color: #f7f8f9;
+  padding: 2.5rem 1rem;
+}
+
+.timeline-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.timeline-subtitle {
+  font-size: 5rem;
+  font-weight: bold;
+  font-weight: 600;
+  color: #ffc107;
+}
+
+.timeline-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333333;
+}
+
+.timeline-container {
+  margin-top: 5rem;
+}
+
+.vertical-timeline-element-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #fbc107;
+  color: white;
+}
+
+.timeline-icon {
+  font-size: 2rem;
+}
+
+.vertical-timeline-element-content {
+  background-color: #fff4e0 !important;
+  color: #333333 !important;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.vertical-timeline-element-content-arrow {
+  border-right: 7px solid #fbc107 !important;
+}
+
+.step-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.step-description {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333333;
+}
+
+.step-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .step-title {
+    font-size: 1.25rem;
+  }
+
+  .timeline-container {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .step-image {
+    max-width: 100%;
+  }
+}

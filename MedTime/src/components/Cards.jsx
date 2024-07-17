@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import iconHospital from '../assets/images/icon-hospital.svg';
 import iconPharmacy from '../assets/images/icon-pharmacy.svg';
@@ -25,6 +26,31 @@ Card.propTypes = {
 };
 
 const Cards = () => {
+  useEffect(() => {
+    const cards = document.querySelectorAll('.card');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animation = 'fadeInUp 1s forwards';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    cards.forEach(card => {
+      observer.observe(card);
+    });
+
+    return () => {
+      cards.forEach(card => {
+        observer.unobserve(card);
+      });
+    };
+  }, []);
+
   return (
     <div className="cards-container">
       <Card
