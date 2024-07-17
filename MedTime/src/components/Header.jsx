@@ -3,10 +3,12 @@ import { useState } from 'react';
 import { FaHeartbeat } from 'react-icons/fa';
 import Button from './Button';
 import hamburgerIcon from '../assets/images/hamburger-icon.svg';
+import { useNavigate } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
   const [openNavigation, setOpenNavigation] = useState(false);
+  const navigate = useNavigate();
 
   const toggleNavigation = () => {
     if (openNavigation) {
@@ -25,9 +27,17 @@ const Header = () => {
     setOpenNavigation(false);
   };
 
+  const handleLoginClick = () => {
+    navigate('/login');
+  };
+
+  const handleSignUpClick = () => {
+    navigate('/signup');
+  };
+
   const navigation = [
     { id: 1, title: 'Hospitals', url: '/hospital' },
-    { id: 2, title: 'Pharmacies', url: '/pharmacy' }, // Corrected URL
+    { id: 2, title: 'Pharmacies', url: '/pharmacy' },
     { id: 3, title: 'Book Appointments', url: '/doctor' },
     { id: 4, title: 'Symptom Checker', url: '/symptom-checker' },
   ];
@@ -57,10 +67,10 @@ const Header = () => {
           </div>
         </nav>
 
-        <a href="#signup" className="button hidden mr-8 text-white text-xl font-bold transition-colors hover:text-blue-600 lg:block">
+        <a href="#" className="button hidden mr-8 text-white text-xl font-bold transition-colors hover:text-blue-600 lg:block" onClick={handleSignUpClick}>
           New account
         </a>
-        <Button className="hidden lg:flex text-xl font-bold hover:text-yellow-500" href="#login">
+        <Button className="hidden lg:flex text-xl font-bold hover:text-yellow-500" onClick={handleLoginClick}>
           Sign in
         </Button>
 

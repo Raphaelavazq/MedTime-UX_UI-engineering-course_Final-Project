@@ -1,5 +1,5 @@
 .hero-home-container {
-  margin-top: 4rem; /* Added margin-top for mobile */
+  margin-top: 6rem; /* Increased margin-top for mobile and tablet */
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -22,11 +22,13 @@
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+
 }
 
 @media (min-width: 1024px) {
   .hero-text {
     align-items: flex-start;
+    
   }
 }
 
@@ -37,7 +39,8 @@
 
 @media (min-width: 1024px) {
   .hero-title {
-    font-size: 4rem; /* Increased font size for desktop */
+    font-size: 4rem; 
+
   }
 }
 
@@ -71,6 +74,7 @@
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
 }
 
 @media (min-width: 1024px) {
@@ -86,16 +90,27 @@
   border: 2px solid #fbc107;
 }
 
+.btn-join:hover {
+  background-color: #fbc107; /* Change to yellow on hover */
+  color: white; /* Change text color to white on hover */
+}
+
 .btn-learn {
   background-color: #2563eb; 
   color: white;
+}
+
+.btn-learn:hover {
+  background-color: white; /* Change to white on hover */
+  color: #2563eb; /* Change text color to blue on hover */
+  border: 2px solid #2563eb; /* Add blue border on hover */
 }
 
 .hero-image {
   width: 50%;
   display: flex;
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: 4rem;
 }
 
 @media (min-width: 1024px) {

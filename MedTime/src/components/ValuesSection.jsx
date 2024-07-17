@@ -33,7 +33,7 @@ function ValuesSection() {
   const values = [
     {
       icon: FaHospital,
-      title: 'Find a Hospital',
+      title: 'Find Hospital',
       href: '/hospital',
     },
     {
@@ -43,7 +43,7 @@ function ValuesSection() {
     },
     {
       icon: FaAmbulance,
-      title: 'Pharmacy',
+      title: 'Find Pharmacy',
       href: '/pharmacy',
     },
     {
@@ -56,8 +56,7 @@ function ValuesSection() {
   return (
     <section className="values-section">
       <div className="flex flex-col items-center max-w-full w-full lg:w-[1030px]">
-        <header className="section-header">WHAT MAKES US DIFFERENT</header>
-        <h2 className="text-white">The services we offer</h2>
+        <h2 className="text-blue-600">All in a distance of a click </h2>
         <section className="flex flex-wrap justify-center md:justify-start self-stretch px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 w-full">
             {values.map((value, index) => (
