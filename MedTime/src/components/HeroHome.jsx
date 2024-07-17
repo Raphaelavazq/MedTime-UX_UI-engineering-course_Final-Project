@@ -1,5 +1,5 @@
-import './HeroHome.css';
 import heroImage from '../assets/images/hero-image2.gif'; // Adjust the path as needed
+import './HeroHome.css';
 
 const HeroHome = () => {
   return (
@@ -10,7 +10,7 @@ const HeroHome = () => {
         </h1>
         <p className="hero-subtitle">Health Care without Waiting</p>
         <div className="hero-buttons">
-          <button className="btn-join">Join now </button>
+          <button className="btn-join">Join now</button>
           <button className="btn-learn">Learn More</button>
         </div>
       </div>
@@ -22,7 +22,3 @@ const HeroHome = () => {
 }
 
 export default HeroHome;
-
-
-
-
