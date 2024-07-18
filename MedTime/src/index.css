@@ -1,22 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Montserrat:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Font Face Declarations */
-.fjalla-one-regular {
-  font-family: "Fjalla One", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.poppins-regular {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
 
 /* Global Styles */
 html, body {
@@ -25,7 +12,7 @@ html, body {
   margin: 0 auto;
   padding: 0;
   font-size: 100%;
-  font-family: 'Fjalla One', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   line-height: 1.5;
   background-color: #FFC107;
   color: #333333;

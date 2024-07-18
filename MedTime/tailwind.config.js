@@ -7,9 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'fjalla-one': ['"Fjalla One"', 'sans-serif'],
-        'poppins': ['"Poppins"', 'sans-serif'],
-      },
+        'montserrat': ['"Montserrat"', 'sans-serif'],
+            },
       animation: {
         'fadeIn': 'fadeIn 2s forwards',
         'fadeOut': 'fadeOut 2s forwards',

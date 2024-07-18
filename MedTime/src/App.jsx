@@ -6,23 +6,26 @@ import FindPharmacy from './pages/FindPharmacy';
 import Doctors from './pages/Doctors';
 import BookDoctorPage from './pages/BookDoctorPage';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import SearchHospitals from './components/SearchHospitals';
 import FindHospitalsPage from './pages/FindHospitalsPage';
 import AuthenticationPage from './pages/AuthenticationPage';
-import SymtomChecker from './pages/SymptomChecker';
+import SymptomChecker from './pages/SymptomChecker';
+
 const App = () => {
   return (
     <Router>
       <Routes>
         <Route path="/login" element={<AuthenticationPage />} />
         <Route path="/signup" element={<AuthenticationPage />} />
-        
+
         <Route
           path="/"
           element={
             <>
-              <Header />
+              <Header fixed={true} />
               <Home />
+              <Footer />
             </>
           }
         />
@@ -30,8 +33,9 @@ const App = () => {
           path="/hospital"
           element={
             <>
-              <Header />
+              <Header fixed={false} />
               <Hospital />
+              <Footer />
             </>
           }
         />
@@ -39,8 +43,9 @@ const App = () => {
           path="/pharmacy"
           element={
             <>
-              <Header />
+              <Header fixed={false} />
               <PharmacyPage />
+              <Footer />
             </>
           }
         />
@@ -48,8 +53,9 @@ const App = () => {
           path="/find-pharmacy"
           element={
             <>
-              <Header />
+              <Header fixed={false} />
               <FindPharmacy />
+              <Footer />
             </>
           }
         />
@@ -57,8 +63,9 @@ const App = () => {
           path="/doctor"
           element={
             <>
-              <Header />
+              <Header fixed={false} />
               <Doctors />
+              <Footer />
             </>
           }
         />
@@ -66,8 +73,9 @@ const App = () => {
           path="/book-doctor"
           element={
             <>
-              <Header />
+              <Header fixed={false} />
               <BookDoctorPage />
+              <Footer />
             </>
           }
         />
@@ -75,8 +83,9 @@ const App = () => {
           path="/search-hospitals"
           element={
             <>
-              <Header />
+              <Header fixed={false} />
               <SearchHospitals />
+              <Footer />
             </>
           }
         />
@@ -84,8 +93,9 @@ const App = () => {
           path="/find-hospitals"
           element={
             <>
-              <Header />
+              <Header fixed={false} />
               <FindHospitalsPage />
+              <Footer />
             </>
           }
         />
@@ -93,8 +103,9 @@ const App = () => {
           path="/symptom-checker"
           element={
             <>
-              <Header />
-              <SymtomChecker />
+              <Header fixed={true} />
+              <SymptomChecker />
+              <Footer />
             </>
           }
         />

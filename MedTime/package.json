@@ -11,6 +11,8 @@
     "start-server": "node server.js"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
     "@iconify-icons/ic": "^1.2.13",
     "@iconify-icons/icon-park-solid": "^1.2.8",
     "@iconify-icons/material-symbols": "^1.2.58",
@@ -19,6 +21,8 @@
     "@iconify-icons/ph": "^1.2.5",
     "@iconify-icons/solar": "^1.2.3",
     "@iconify/react": "^5.0.1",
+    "@mui/icons-material": "^5.16.4",
+    "@mui/material": "^5.16.4",
     "@vis.gl/react-google-maps": "^1.1.0",
     "axios": "^1.7.2",
     "body-parser": "^1.20.2",
@@ -31,7 +35,9 @@
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-draggable": "^4.4.6",
     "react-icons": "^5.2.1",
+    "react-resizable": "^3.0.5",
     "react-router-dom": "^6.24.1",
     "react-scroll": "^1.9.0",
     "react-scroll-parallax": "^3.4.5",

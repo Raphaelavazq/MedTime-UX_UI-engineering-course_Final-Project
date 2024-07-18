@@ -1,10 +1,9 @@
-
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const Button = ({ className, href, children, onClick, px }) => {
   const buttonClasses = classNames(
-    'px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-white focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-opacity-75',
+    'px-4 py-2 bg-blue-600 text-white border-2 border-yellow-500 font-semibold rounded-lg shadow-md hover:bg-white hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-opacity-75',
     className,
     {
       [px]: px,

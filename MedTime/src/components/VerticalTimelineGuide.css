@@ -9,10 +9,10 @@
 }
 
 .timeline-subtitle {
-  font-size: 5rem;
+  font-size: 3rem;
   font-weight: bold;
   font-weight: 600;
-  color: #ffc107;
+  color: #2361e9;
 }
 
 .timeline-title {
@@ -41,9 +41,9 @@
 }
 
 .vertical-timeline-element-content {
-  background-color: #fff4e0 !important;
-  color: #333333 !important;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fbc107  !important;
+  color: rgb(255, 255, 255) !important;
+  box-shadow: 0 3px 10px rgba(223, 160, 24, 0.1);
 }
 
 .vertical-timeline-element-content-arrow {

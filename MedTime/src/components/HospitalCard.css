@@ -11,13 +11,17 @@
 }
 
 .hospital-header {
+  
   display: flex;
   align-items: center;
   margin-bottom: 20px;
 }
+.h2{
+  margin-top:8rem;
 
+}
 .hospital-icon {
-  background-color: black;
+  background-color: #2361e9;
   color: white;
   padding: 7px;
   display: flex;
@@ -92,8 +96,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #fac007;
-  color: black;
+  background-color: #2361e9;
+  color: rgb(255, 255, 255);
   padding: 10px;
   border-radius: 8px;
 }
@@ -101,12 +105,13 @@
 .waiting-icon {
   font-size: 2rem;
   margin-right: 10px;
+  color: rgb(255, 255, 255);
 }
 
 .waiting-text {
   font-size: 1.5rem;
   font-weight: bold;
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 .hospital-footer {

@@ -54,7 +54,7 @@ function ValuesSection() {
   ];
 
   return (
-    <section className="values-section">
+    <section className="values-section bg">
       <div className="flex flex-col items-center max-w-full w-full lg:w-[1030px]">
         <h2 className="text-blue-600">All in a distance of a click </h2>
         <section className="flex flex-wrap justify-center md:justify-start self-stretch px-4">

@@ -23,7 +23,7 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--blue-500);
+  color: var(--yellow-500);
 }
 
 @media (min-width: 1024px) {
@@ -48,5 +48,7 @@ button:hover {
 }
 
 .no-hover:hover {
-  color: white; /* Ensure no hover effect */
+  color: white;
 }
+
+
