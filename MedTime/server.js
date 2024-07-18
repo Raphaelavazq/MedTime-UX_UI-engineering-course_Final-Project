@@ -2,6 +2,7 @@ import express from 'express';
 import axios from 'axios';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import { OpenAI } from 'openai';
 
 dotenv.config();
 
@@ -9,6 +10,11 @@ const app = express();
 const port = process.env.PORT || 3001;
 
 app.use(cors());
+app.use(express.json());
+
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
 
 const getPlaceDetails = async (placeId, apiKey) => {
   try {
@@ -149,6 +155,24 @@ app.get('/api/maps-api-key', (req, res) => {
   }
 
   res.json({ apiKey });
+});
+
+// Chatbot endpoint
+app.post('/api/chatbot', async (req, res) => {
+  const { message } = req.body;
+
+  try {
+    const response = await openai.chat.completions.create({
+      messages: [{ role: 'user', content: message }],
+      model: 'gpt-3.5-turbo',
+      max_tokens: 150,
+    });
+
+    res.json({ response: response.choices[0].message.content });
+  } catch (error) {
+    console.error('Error fetching response from OpenAI API:', error);
+    res.status(500).send('Something went wrong');
+  }
 });
 
 app.listen(port, () => {
