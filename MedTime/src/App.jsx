@@ -1,4 +1,3 @@
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Hospital from './pages/Hospital';
@@ -10,13 +9,14 @@ import Header from './components/Header';
 import SearchHospitals from './components/SearchHospitals';
 import FindHospitalsPage from './pages/FindHospitalsPage';
 import AuthenticationPage from './pages/AuthenticationPage';
-
+import SymtomChecker from './pages/SymptomChecker';
 const App = () => {
   return (
     <Router>
       <Routes>
         <Route path="/login" element={<AuthenticationPage />} />
         <Route path="/signup" element={<AuthenticationPage />} />
+        
         <Route
           path="/"
           element={
@@ -86,6 +86,15 @@ const App = () => {
             <>
               <Header />
               <FindHospitalsPage />
+            </>
+          }
+        />
+        <Route
+          path="/symptom-checker"
+          element={
+            <>
+              <Header />
+              <SymtomChecker />
             </>
           }
         />
