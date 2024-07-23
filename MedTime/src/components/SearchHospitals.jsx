@@ -13,7 +13,7 @@ const SearchHospitals = () => {
   };
 
   return (
-    <div className="relative bg-yellow-500 p-4 md:p-4 flex flex-col justify-end">
+    <div className="relative bg-yellow-500 p-20 pl-0 flex flex-col justify-">
       <div className="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-4">
         <div className="relative w-full md:w-1/2">
           <FaSearch className="absolute top-1/2 left-3 transform -translate-y-1/2 text-gray-400" />

@@ -10,7 +10,7 @@ const socials = [
 
 const Footer = () => {
   return (
-    <footer className="bg-blue-500 fixed  text-white font-semibold py-3  bottom-0 left-0 w-full ">
+    <footer className="bg-blue-600 fixed  text-white font-semibold py-4  bottom-0 left-0 w-full ">
       <div className="flex flex-col sm:flex-row justify-between items-center px-6 mx-auto max-w-7xl">
         <p className="text-center sm:text-left mb-2 sm:mb-0 text-sm">
           © {new Date().getFullYear()}. All rights reserved.

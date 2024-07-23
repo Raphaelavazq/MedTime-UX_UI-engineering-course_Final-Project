@@ -23,9 +23,13 @@ const theme = createTheme({
     background: {
       default: '#FFC107',
     },
+    text: {
+      primary: '#333333',
+    },
   },
   typography: {
-    fontFamily: 'Montserrat, Poppins, sans-serif',
+    fontFamily: 'Montserrat, sans-serif',
+    fontWeightSemiBold: 600,
   },
 });
 
@@ -46,26 +50,50 @@ const SymptomChecker = () => {
         <CssBaseline />
         <AppBar position="static" color="primary">
           <Toolbar className="header">
-            <Typography variant="h6" component="div">
+            <Typography variant="h6" component="div" sx={{ fontWeight: theme.typography.fontWeightSemiBold }}>
               Symptom Checker Dashboard
             </Typography>
           </Toolbar>
         </AppBar>
-        <Container component="main" sx={{ mt: 8, mb: 2, flex: 1 }}>
-          <Typography variant="h4" component="h1" gutterBottom>
+        <Container component="main" sx={{ mt: 8, mb: 4, flex: 1 }}>
+          <Typography variant="h4" component="h1" gutterBottom sx={{ fontWeight: theme.typography.fontWeightSemiBold }}>
             Welcome to the Symptom Checker Dashboard
           </Typography>
           <Typography variant="body1" gutterBottom>
             Here you can log and track your symptoms.
           </Typography>
 
-          <Box component="form" sx={{ mb: 4 }}>
+          <Box component="form" sx={{ mt: 4, mb: 4 }}>
             <TextField
               label="Symptom"
               value={symptom}
               onChange={(e) => setSymptom(e.target.value)}
               fullWidth
+              InputProps={{
+                style: {
+                  backgroundColor: '#ffffff',
+                  borderColor: '#ffffff',
+                },
+              }}
+              InputLabelProps={{
+                style: {
+                  color: '#ffffff',
+                },
+              }}
               className="form-field"
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                  '& fieldset': {
+                    borderColor: '#ffffff',
+                  },
+                  '&:hover fieldset': {
+                    borderColor: '#ffffff',
+                  },
+                  '&.Mui-focused fieldset': {
+                    borderColor: '#ffffff',
+                  },
+                },
+              }}
             />
             <TextField
               label="Description"
@@ -74,7 +102,31 @@ const SymptomChecker = () => {
               fullWidth
               multiline
               rows={4}
+              InputProps={{
+                style: {
+                  backgroundColor: '#ffffff',
+                  borderColor: '#ffffff',
+                },
+              }}
+              InputLabelProps={{
+                style: {
+                  color: '#ffffff',
+                },
+              }}
               className="form-field"
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                  '& fieldset': {
+                    borderColor: '#ffffff',
+                  },
+                  '&:hover fieldset': {
+                    borderColor: '#ffffff',
+                  },
+                  '&.Mui-focused fieldset': {
+                    borderColor: '#ffffff',
+                  },
+                },
+              }}
             />
             <Button variant="contained" color="primary" onClick={handleAddSymptom} className="button-primary">
               Add Symptom
@@ -86,9 +138,15 @@ const SymptomChecker = () => {
               <Grid item xs={12} md={6} lg={4} key={index}>
                 <Card className="card">
                   <CardContent>
-                    <Typography variant="h6" className="text-dark">{item.symptom}</Typography>
-                    <Typography variant="body2" className="text-dark">{item.description}</Typography>
-                    <Typography variant="caption" className="date">{item.date}</Typography>
+                    <Typography variant="h6" className="text-dark" sx={{ fontWeight: theme.typography.fontWeightSemiBold }}>
+                      {item.symptom}
+                    </Typography>
+                    <Typography variant="body2" className="text-dark" sx={{ fontWeight: theme.typography.fontWeightSemiBold }}>
+                      {item.description}
+                    </Typography>
+                    <Typography variant="caption" className="date">
+                      {item.date}
+                    </Typography>
                   </CardContent>
                 </Card>
               </Grid>

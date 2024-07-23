@@ -1,6 +1,9 @@
 import HeroHome from "../components/HeroHome";
 import Header from "../components/Header";
-import ValuesSection from "../components/ValuesSection"; // Import the new ValuesSection
+import ValuesSection from "../components/ValuesSection"; 
+import TopSpecialties from '../components/TopSpecialties';
+import FeaturedServices from '../components/FeaturedServices';
+
 import '../pages/Home.css'; 
 
 const Home = () => {
@@ -9,6 +12,9 @@ const Home = () => {
       <Header />
       <HeroHome />
       <ValuesSection /> 
+      <TopSpecialties />
+      <FeaturedServices />
+     
     </div>
   );
 }

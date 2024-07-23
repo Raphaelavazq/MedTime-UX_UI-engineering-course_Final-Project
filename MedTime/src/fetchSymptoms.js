@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:3001'; // Adjust this if your server runs on a different port
+const BASE_URL = 'http://localhost:3001'; 
 
 export const fetchChatbotResponse = async (message) => {
   try {

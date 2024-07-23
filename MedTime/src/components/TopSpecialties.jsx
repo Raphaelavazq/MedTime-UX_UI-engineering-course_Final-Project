@@ -20,7 +20,7 @@ const TopSpecialties = () => {
             <div className="flex justify-center items-center bg-blue-600 rounded-full w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 mx-auto">
               <img src={specialty.icon} alt={specialty.name} className="h-10 md:h-14 lg:h-16" />
             </div>
-            <p className="mt-2 text-2xl text-yellow-500 fontFamily: 'Fjalla One, sans-serif' text-center">{specialty.name}</p>
+            <p className="mt-2 text-2xl text-blue-500 font-semibold text-center">{specialty.name}</p>
           </div>
         ))}
       </div>
